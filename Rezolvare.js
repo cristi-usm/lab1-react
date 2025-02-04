@@ -1,11 +1,11 @@
-var nr = 10; // number
-let text = "Hello"; // string
-const truthiness = true; // boolean
+var nr = 10;
+let text = "Hello";
+const truthiness = true;
 
 function varType(variabila) {
     return typeof variabila;
 }
 
-console.log(varType(nr)); // "number"
-console.log(varType(text)); // "string"
-console.log(varType(truthiness)); // "boolean"
+console.log(varType(nr));
+console.log(varType(text));
+console.log(varType(truthiness));
