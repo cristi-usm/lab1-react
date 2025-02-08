@@ -9,7 +9,7 @@ const aria = (num1) => {
 }
 
 // 2.3
-const functie_anonima = (num) => {
+const functieAnonima = (num) => {
     return Math.pow(num, 2)
 }
 
@@ -24,26 +24,26 @@ const dublu_numar = (num) => {
     return num * 2
 }
 
-const patrat_numar = (num) => {
+const patratNumar = (num) => {
     return Math.pow(num, 2)
 }
 
-const functie_principala = (num) => {
-    return {"dublu": dublu_numar(num), "patrat": patrat_numar(num)}
+const functiePrincipala = (num) => {
+    return {"dublu": dubluNumar(num), "patrat": patratNumar(num)}
 }
 
 // 2.6
-const suma_noua = (num1, num2) => {
+const sumaNoua = (num1, num2) => {
     return num1 + num2
 }
 
 // 2.7
-const alta_functie = (num) => {
+const altaFunctie = (num) => {
     return num + 1
 }
 
 const functie = (arr) => {
     for (const element of arr) {
-        alta_functie(element)
+        altaFunctie(element)
     }
 }
