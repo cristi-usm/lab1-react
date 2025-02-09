@@ -41,6 +41,7 @@ const obj = {
 }
 
 // 1.8
+console.log("<--- --- --- Sarcina 1.8 --- --- --->")
 const arr = [23, "familie", false, {obj: "Victoras"}, ['v', 'i', 'c', 't', 'o', 'r', 'a', 's']]
 
 arr.forEach(element => {

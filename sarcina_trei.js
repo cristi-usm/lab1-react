@@ -7,6 +7,7 @@ const masina = {
 
 
 // 3.2
+console.log("<--- --- --- Sarcina 3.2 --- --- --->")
 console.log(masina.marca)
 console.log(masina["model"])
 
@@ -17,6 +18,7 @@ masina.color = "Sur"
 delete masina.model
 
 // 3.5
+console.log("<--- --- --- Sarcina 3.5 --- --- --->")
 for (const key in masina) {
     if (Object.prototype.hasOwnProperty.call(masina, key)) {
         const element = masina[key];
@@ -33,6 +35,7 @@ const aboutCar = () => {
 masina.info = aboutCar()
 
 // 3.7
+console.log("<--- --- --- Sarcina 3.7 --- --- --->")
 const persoana = {
     "nume": "Vlad",
     "varsta": 20
@@ -45,6 +48,7 @@ const mesajPersoana = (obj) => {
 console.log(mesajPersoana(persoana))
 
 // 3.8
+console.log("<--- --- --- Sarcina 3.8 --- --- --->")
 console.log("color" in masina)
 
 // 3.9
@@ -66,6 +70,7 @@ const studentCreator = (nume, varsta, nota) => {
 }
 
 // 3.11
+console.log("<--- --- --- Sarcina 3.11 --- --- --->")
 let nouaMasina = {}
 Object.assign(nouaMasina, masina)
 const incaONouaMasina = {...masina}
@@ -74,6 +79,7 @@ console.log(nouaMasina)
 console.log(incaONouaMasina )
 
 // 3.12
+console.log("<--- --- --- Sarcina 3.12 --- --- --->")
 const sum = (a, b) => a + b
 const dif = (a, b) => a - b
 const mul = (a, b) => a * b
@@ -85,10 +91,14 @@ const calculator = {
     mul(a, b) {return a * b},
     div(a, b) {return b !== 0 ? a / b : "Numitor nu poate fi egal cu 0"},
 }
-
+console.log(calculator.sum(4, 2))
+console.log(calculator.dif(4, 2))
+console.log(calculator.mul(4, 2))
+console.log(calculator.div(4, 2))
 console.log(calculator.div(4, 0))
 
 // 3.13
+console.log("<--- --- --- Sarcina 3.13 --- --- --->")
 const { marca, color } = masina
 console.log(marca)
 console.log(color)

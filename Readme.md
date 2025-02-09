@@ -75,3 +75,5 @@
 ### 8.4 În fișierul **main.js** importați funcția cu un nume ales de utilizator și folosiți-o pentru a saluta un utilizator.
 ### 8.5 În fișierul  **dateUtilizator.js** exportați mai multe valori.
 ### 8.6 În fișierul **main.js** importați întregul modul și accesați valorile exportate.
+
+### Muzica pentru controlul laboratorului nr.1: https://www.youtube.com/watch?v=G1IbRujko-A
