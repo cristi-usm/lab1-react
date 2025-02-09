@@ -15,12 +15,12 @@ const functieAnonima = (num) => {
 
 
 // 2.4
-const upper_string = (str) => {
+const upperString = (str) => {
     return str.toUpperCase().length()
 }
 
 // 2.5
-const dublu_numar = (num) => {
+const dubluNumar = (num) => {
     return num * 2
 }
 

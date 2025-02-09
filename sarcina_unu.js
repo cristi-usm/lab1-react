@@ -4,7 +4,7 @@ let str = "String"
 const bool = true
 
 // 1.2
-const prima_functie = (str) => {
+const primaFunctie = (str) => {
     return typeof(str)
 }
 
@@ -22,7 +22,7 @@ let varsta = 25
 let propozitie = `Nume: ${nume}, Varsta: ${varsta}`
 
 // 1.5
-let test_varsta = varsta > 18 ? "Batran" : "Tanar"
+let testVarsta = varsta > 18 ? "Batran" : "Tanar"
 
 // 1.6
 let unexistent = (obj, num) => {
