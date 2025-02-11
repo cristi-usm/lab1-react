@@ -77,6 +77,6 @@
 ### 8.6 În fișierul **main.js** importați întregul modul și accesați valorile exportate.
 
 
-### Muzicuță list :
+### Muzicuță list : https://www.youtube.com/watch?v=FvzgtCpVzcA
 
 ![Imagine drăguță](image.png)
