@@ -15,6 +15,7 @@ const loadScript = (src, bool) => {
 }
 
 const promise = loadScript("salut.js", true)
+
 promise.then(
     () => salut(),
     (error) => handleError(error)

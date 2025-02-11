@@ -17,12 +17,12 @@ function handleError(error) {
 
 const promise = loadScript("functii7_7/f1.js");
 
-promise.then(
-    () => func1(),
-    (error) => handleError(error)
-)
+// promise.then(
+//     () => func1(),
+//     (error) => handleError(error)
+// )
 
-promise.then(() => func1()).catch((error) => handleError(error));
+// promise.then(() => func1()).catch((error) => handleError(error));
 
 promise
     .then(() => loadScript("functii7_7/f2.js"))
