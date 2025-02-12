@@ -1,107 +1,50 @@
-// 4.1
-const orase = ["Iasi", "Bucuresti", "Brasov"];
+// 5.1
 
-console.log(orase[0]);
-console.log(orase[2]);
+const h1 = document.getElementById("h1");
+h1.innerHTML = "Hello";
 
-// 4.2
+// 5.2
+const list = document.querySelectorAll("li");
+list[0].style.color = "red";
 
-orase.unshift("Cluj");
-orase.push("Arad");
-orase.pop();
-console.log(orase);
+// 5.3
 
-// 4.3
-const culori = ["Negru", "Alb", "Albastru", "Verde"];
-for (const element of culori) {
-  console.log(element);
-}
+let newP = document.createElement("p");
 
-// 4.4
+newP.textContent = "Acesta este un p";
 
-const animale = ["pisica", "caine", "cal", "leu", "bou"];
+let container = document.getElementById("container");
 
-const result = animale.forEach((element) =>
-  console.log(`Acest animal este ${element}`)
-);
+container.appendChild(newP);
 
-// 4.5
-function isBig(value) {
-  return value >= 10;
-}
+// 5.4
+const img = document.querySelector("img");
+img.src =
+  "https://images.unsplash.com/photo-1739056656210-7c3cab6fff42?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
-const arrNr = [2, 4, 60, 55, 8, 9, 23, 10, 14, 1, 3, 89, 16].filter(isBig);
+// 5.5
+const h2 = document.getElementById("box");
+h2.classList.add("example");
 
-console.log(arrNr);
+// 5.6
+const element = document.getElementById("p");
+element.remove();
 
-// 4.6
-const array = [9, 8, 7, 6, 5, 4, 3, 2, 1];
-array.sort();
+// 5.7
 
-console.log(array);
+const button = document
+  .getElementById("btn")
+  .addEventListener("click", function () {
+    const h3 = (document.getElementById("title").innerText = "Hi");
+  });
 
-// 4.7
+// 5.9
 
-const array2 = [55, 45, 33, 16, 6, 31];
+const ul = document.querySelector("ul");
 
-const map = array2.map((x) => x * x);
+const firstElement = ul.firstElementChild.textContent;
+const lastElement = ul.lastElementChild.textContent;
+console.log(firstElement);
+console.log(lastElement);
 
-console.log(map);
-
-// 4.8
-
-const array3 = [1, 2, 3, 4];
-
-const initialValue = 0;
-
-const sumWithInitial = array3.reduce((acc, curr) => acc + curr, initialValue);
-
-console.log(sumWithInitial);
-
-// 4.9
-
-console.log(orase.includes("Iasi"));
-console.log(array2.includes(16));
-console.log(orase.indexOf("Bucuresti"));
-console.log(array.indexOf(5));
-
-// 4.10
-
-const arr10 = ["a", "b", "c", "d"];
-const arr11 = [0, 1, 2, 3];
-
-const arr12 = arr10.concat(arr11);
-
-const arr13 = [...arr10, ...arr11];
-
-console.log(arr12);
-console.log(arr13);
-
-// 4.11
-
-const matrice = [
-  [1, 2],
-  [3, 4],
-];
-
-console.log(matrice[0][1]);
-
-// 4.12
-let a = [10, 20, 20, 30, 16, 16];
-const resultA = a.filter((item, index) => a.indexOf(item) === index);
-
-console.log(resultA);
-
-// 4.13
-
-const fructe = ["banana", "capsuna", "rodie", "mandarine", "cocos", "ananas"];
-
-const resultFructe = fructe.slice(1, 3);
-
-console.log(resultFructe);
-
-const arr5 = [10, 20, 30, 40, 50];
-
-arr5.splice(2, 1);
-
-console.log(arr5);
+// 5.11
