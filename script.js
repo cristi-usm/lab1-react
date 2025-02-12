@@ -1,9 +1,13 @@
-// 1.1
+// 1.2
 
-var number = 20;
-let string = "Jana";
-const boolean = true;
+function myFunction(x) {
+  if (typeof x === "number") {
+    console.log("x is a number");
+  }
+  if (typeof x === "string") {
+    console.log("x is a string");
+  }
+}
 
-console.log(number);
-console.log(string);
-console.log(boolean);
+myFunction(12);
+myFunction("Hello");
