@@ -1,60 +1,61 @@
-// 1.3
+// 2.1
 
-const integer = "123";
-const parsedInteger = parseInt(integer);
-console.log(parsedInteger);
-
-const str = 456;
-const strConverted = str.toString();
-console.log(strConverted);
-
-// 1.4
-
-const nume = "Arina";
-const varsta = 20;
-
-console.log(`Eu am o sora geamana care o cheama ${nume} si are ${varsta} ani.`);
-
-// 1.5
-let studenta = "Alexandra";
-
-studenta = "Luciana";
-
-console.log(studenta);
-
-// 1.6
-let z;
-
-function checkNullOrUndefined(z) {
-  if (z === null) {
-    console.log("Null");
-  } else if (z === undefined) {
-    console.log("Undefined");
-  }
+function suma(a, b) {
+  return a + b;
 }
 
-checkNullOrUndefined(z);
+console.log(suma(10, 6));
 
-// 1.7
+// 2.2
 
-const obj = {
-  nume: "Daniela",
-  varsta: 20,
-  studenta: true,
-  adresa: {
-    strada: "Milano",
-    oras: "Italia",
-    blocul: 2,
-  },
+function areaOfRectangle(l, L = 1) {
+  const a = l * L;
+  return a;
+}
+
+console.log(areaOfRectangle(4));
+
+// 2.3
+
+let patrat = function (x) {
+  const rezultatTotal = x * x;
+  return rezultatTotal;
 };
 
-obj.facultate = "Drept";
-obj.email = "dana@gmail.com";
-delete obj.adresa.blocul;
+console.log(patrat(23));
 
-console.log(obj);
+// 2.4
 
-// 1.8
+function uppercaseAndCount(str) {
+  return str.toUpperCase().length;
+}
 
-const array = ["Mar", false, "Hello World!", 3.14, null, undefined];
-array.forEach((element) => console.log(typeof element));
+console.log(uppercaseAndCount("Hello World"));
+
+// 2.5
+
+function returnObj(x, c) {
+  return {
+    sumNr: x * 2,
+    calcPatrat: c * c,
+  };
+}
+
+console.log(returnObj(4, 5));
+
+// 2.6
+
+let calcSum = (k, m) => k + m;
+
+console.log(calcSum(2, 5));
+
+// 2.7
+
+function myFunctionArray(arr, fn) {
+  return arr.map(fn);
+}
+
+const numbers = [8, 16, 22, 6, 31];
+const result = myFunctionArray(numbers, (x) => x + 1);
+
+console.log(result);
