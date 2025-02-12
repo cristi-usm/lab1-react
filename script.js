@@ -1,122 +1,107 @@
-// 3.1
-const masina = {
-  marca: "BMW",
-  model: "M5",
-  an: 2018,
-  descriere: function () {
-    return `Marca ${this.marca}, model ${this.model}, anul ${this.an}`;
-  },
-};
+// 4.1
+const orase = ["Iasi", "Bucuresti", "Brasov"];
 
-// 3.2
-console.log(masina.marca);
-console.log(masina.model);
+console.log(orase[0]);
+console.log(orase[2]);
 
-console.log(masina["marca"]);
-console.log(masina["model"]);
+// 4.2
 
-// 3.3
+orase.unshift("Cluj");
+orase.push("Arad");
+orase.pop();
+console.log(orase);
 
-masina.culoare = "Albastru";
-masina.an = 2020;
-console.log(masina);
-
-// 3.4
-
-delete masina.model;
-
-console.log(masina);
-
-// 3.5
-
-for (let key in masina) {
-  console.log(key + ":", masina[key]);
+// 4.3
+const culori = ["Negru", "Alb", "Albastru", "Verde"];
+for (const element of culori) {
+  console.log(element);
 }
 
-// 3. 6
+// 4.4
 
-console.log(masina.descriere());
+const animale = ["pisica", "caine", "cal", "leu", "bou"];
 
-// 3.7
+const result = animale.forEach((element) =>
+  console.log(`Acest animal este ${element}`)
+);
 
-function myObj(obj) {
-  return `Buna ma numesc: ${obj.nume}, am varsta de: ${obj.varsta} ani.`;
+// 4.5
+function isBig(value) {
+  return value >= 10;
 }
 
-const obj = {
-  nume: "Vanesa",
-  varsta: 89,
-};
+const arrNr = [2, 4, 60, 55, 8, 9, 23, 10, 14, 1, 3, 89, 16].filter(isBig);
 
-console.log(myObj(obj));
+console.log(arrNr);
 
-// 3.8
+// 4.6
+const array = [9, 8, 7, 6, 5, 4, 3, 2, 1];
+array.sort();
 
-console.log("culoare" in masina);
+console.log(array);
 
-// 3.9
+// 4.7
 
-const casa = {
-  adresa: {
-    strada: "Stefan Cel Mare",
-    oras: "Chisinau",
-  },
-};
+const array2 = [55, 45, 33, 16, 6, 31];
 
-console.log(casa);
+const map = array2.map((x) => x * x);
 
-// 3.10
+console.log(map);
 
-function myStudent(nume, varsta, nota) {
-  let obj = {
-    nume: nume,
-    varsta: varsta,
-    nota: nota,
-  };
-  return obj;
-}
+// 4.8
 
-const result = myStudent("Valentina", 23, 7);
+const array3 = [1, 2, 3, 4];
 
-console.log(result);
+const initialValue = 0;
 
-// 3.11
-const clone = Object.assign(masina, casa);
-console.log(clone);
+const sumWithInitial = array3.reduce((acc, curr) => acc + curr, initialValue);
 
-const clone2 = { ...casa, ...masina };
-console.log(clone2);
+console.log(sumWithInitial);
 
-// 3.12
+// 4.9
 
-const calculator = {
-  adunare: function (a, b) {
-    return a + b;
-  },
-  scadere: function (a, b) {
-    return a - b;
-  },
-  inmultire: function (a, b) {
-    return a * b;
-  },
-  impartire: function (a, b) {
-    if (b === 0) {
-      return "Nu se imparte la 0";
-    } else {
-      return a / b;
-    }
-  },
-};
+console.log(orase.includes("Iasi"));
+console.log(array2.includes(16));
+console.log(orase.indexOf("Bucuresti"));
+console.log(array.indexOf(5));
 
-console.log(calculator.adunare(16, 15));
-console.log(calculator.scadere(10, 2));
-console.log(calculator.inmultire(4, 4));
-console.log(calculator.impartire(8, 3));
+// 4.10
 
-// 3.13
+const arr10 = ["a", "b", "c", "d"];
+const arr11 = [0, 1, 2, 3];
 
-let { marca, an, model } = masina;
+const arr12 = arr10.concat(arr11);
 
-console.log(marca);
-console.log(an);
-console.log(model);
+const arr13 = [...arr10, ...arr11];
+
+console.log(arr12);
+console.log(arr13);
+
+// 4.11
+
+const matrice = [
+  [1, 2],
+  [3, 4],
+];
+
+console.log(matrice[0][1]);
+
+// 4.12
+let a = [10, 20, 20, 30, 16, 16];
+const resultA = a.filter((item, index) => a.indexOf(item) === index);
+
+console.log(resultA);
+
+// 4.13
+
+const fructe = ["banana", "capsuna", "rodie", "mandarine", "cocos", "ananas"];
+
+const resultFructe = fructe.slice(1, 3);
+
+console.log(resultFructe);
+
+const arr5 = [10, 20, 30, 40, 50];
+
+arr5.splice(2, 1);
+
+console.log(arr5);
