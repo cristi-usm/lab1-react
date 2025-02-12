@@ -1,0 +1,13 @@
+div,p,li,button,input{
+    font-size: 20px;
+}
+
+#new_orphans {
+    white-space: pre;
+}
+.added{
+    color: blue;
+}
+.active{
+    color: deeppink;
+}
