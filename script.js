@@ -68,3 +68,51 @@ console.log(obiect);
 //1.8
 let array = [42, "text", true, {nume:"Denis"}, [1, 2, 3] ];
 array.forEach(el => console.log(typeof el));
+
+
+//2.1
+function suma(a,b) {
+    return a + b;
+}
+console.log(suma(3, 7));
+
+//2.2
+function ariaDreptunghiului(latime, inaltime = 1) {
+    return latime * inaltime;
+}
+console.log(ariaDreptunghiului(20));
+
+//2.3
+const patrat = function(numar) {
+    return numar * numar;
+}
+console.log(patrat(5));
+
+//2.4
+function upperCase(text) {
+    let upperText = text.toUpperCase();
+    return [upperText, upperText.length];
+}
+console.log(upperCase("Salut"));
+
+//2.5
+function dublu(numar) {
+    return numar * 2;
+}
+function numarPatrat(numar) {
+    return numar * numar;
+}
+function calcule(numar) {
+    return { dublu: dublu(numar), numarPatrat: numarPatrat(numar) };
+}
+console.log(calcule(1));
+
+//2.6
+const sageata = (a, b) => a + b;
+console.log(sageata(1, 2));
+
+//2.7
+function altaFunctie(array, functie) {
+    return array.map(functie);
+}
+console.log(altaFunctie([1, 2, 3], dublu));
