@@ -403,3 +403,97 @@ document.getElementById("addItemButton").addEventListener("click", function() {
     li.innerText = "Element nou";
     ulList.appendChild(li);
 });
+
+//==========================================================
+//==========================================================
+//Exercitiul 7.1
+setTimeout(() => {
+    console.log("Mesaj după 3 secunde");
+}, 3000);
+
+//==========================================================
+//Exercitiul 7.2
+let count = 1;
+let interval = setInterval(() => {
+    console.log(count);
+    if (count === 5) clearInterval(interval);
+    count++;
+}, 1000);
+
+//==========================================================
+//Exercitiul 7.3
+function salut(callback) {
+    console.log("Salut!");
+    callback();
+}
+salut(() => console.log("Callback apelat!"));
+
+//==========================================================
+//Exercitiul 7.4
+function asteapta() {
+    return new Promise(resolve => {
+        setTimeout(() => resolve("Promisiune rezolvată!"), 2000);
+    });
+}
+
+//==========================================================
+//Exercitiul 7.5
+function verifica(numar) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (numar > 5) resolve("Succes!");
+            else reject("Eroare: Numărul este prea mic!");
+        }, 2000);
+    });
+}
+
+//==========================================================
+//Exercitiul 7.16
+async function executaAsteptare() {
+    let rezultat = await asteapta();
+    console.log(rezultat);
+}
+executaAsteptare();
+
+//==========================================================
+//Exercitiul 7.7
+function promisiune1() {
+    return new Promise(resolve => setTimeout(() => resolve("Pasul 1"), 1000));
+}
+function promisiune2() {
+    return new Promise(resolve => setTimeout(() => resolve("Pasul 2"), 2000));
+}
+function promisiune3() {
+    return new Promise(resolve => setTimeout(() => resolve("Pasul 3"), 3000));
+}
+
+promisiune1()
+    .then(rez => {
+        console.log(rez);
+        return promisiune2();
+    })
+    .then(rez => {
+        console.log(rez);
+        return promisiune3();
+    })
+    .then(rez => console.log(rez));
+
+//==========================================================
+//Exercitiul 7.8
+fetch("https://jsonplaceholder.typicode.com/posts/1")
+    .then(response => response.json())
+    .then(data => console.log("Postare:", data))
+    .catch(error => console.error("Eroare la fetch:", error));
+
+//==========================================================
+//Exercitiul 7.9
+let p1 = new Promise(resolve => setTimeout(() => resolve("Promisiune 1"), 1000));
+let p2 = new Promise((_, reject) => setTimeout(() => reject("Eroare la Promisiune 2"), 2000));
+let p3 = new Promise(resolve => setTimeout(() => resolve("Promisiune 3"), 3000));
+
+Promise.all([p1, p3])
+    .then(results => console.log("Promise.all rezolvat:", results))
+    .catch(error => console.error("Promise.all eroare:", error));
+
+Promise.allSettled([p1, p2, p3])
+    .then(results => console.log("Promise.allSettled rezultate:", results));
