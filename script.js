@@ -1,50 +1,144 @@
-// 5.1
+// 8.1
 
-const h1 = document.getElementById("h1");
-h1.innerHTML = "Hello";
+// 7.1
+setTimeout(() => {
+  console.log("Hello World!");
+}, 3000);
 
-// 5.2
-const list = document.querySelectorAll("li");
-list[0].style.color = "red";
+// 7.2
 
-// 5.3
+let nr = 1;
 
-let newP = document.createElement("p");
+let timer = setInterval(() => {
+  console.log(nr);
+  nr++;
 
-newP.textContent = "Acesta este un p";
+  if (nr > 5) {
+    clearInterval(timer);
+  }
+}, 1000);
 
-let container = document.getElementById("container");
+// 7.3
 
-container.appendChild(newP);
+function hello(callback) {
+  console.log("Salut!");
+  callback();
+}
 
-// 5.4
-const img = document.querySelector("img");
-img.src =
-  "https://images.unsplash.com/photo-1739056656210-7c3cab6fff42?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+function message() {
+  console.log("Message");
+}
 
-// 5.5
-const h2 = document.getElementById("box");
-h2.classList.add("example");
+hello(message);
 
-// 5.6
-const element = document.getElementById("p");
-element.remove();
+// 7.4
+function myPromise() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Promisiune dupa 2 secunde");
+    }, 2000);
+  });
+}
 
-// 5.7
+myPromise().then((sms) => {
+  console.log(sms);
+});
 
-const button = document
-  .getElementById("btn")
-  .addEventListener("click", function () {
-    const h3 = (document.getElementById("title").innerText = "Hi");
+// 7.5
+
+function checkV(value) {
+  return new Promise((resolve, reject) => {
+    if (value > 20) {
+      resolve("Valoarea este mai mare decat 20");
+    } else {
+      reject("Valoarea este mai mica decat 20");
+    }
+  });
+}
+
+checkV(26)
+  .then((result) => console.log(result))
+  .catch((error) => console.log(error));
+
+checkV(16)
+  .then((result) => console.log(result))
+  .catch((error) => console.log(error));
+
+// 7.6
+
+async function callMyPromise() {
+  const result = await myPromise();
+  console.log(result);
+}
+
+callMyPromise();
+
+// 7.7
+function step1() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Step 1");
+    }, 1000);
+  });
+}
+
+function step2() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Step 2");
+    }, 1500);
+  });
+}
+
+function step3() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Step 3");
+    }, 2000);
+  });
+}
+
+step1()
+  .then((result) => {
+    console.log(result);
+    return step2();
+  })
+  .then((result2) => {
+    console.log(result2);
+    return step3();
+  })
+  .then((result3) => {
+    console.log(result3);
+  })
+  .catch((error) => {
+    console.log("A aparut o eroare " + error);
   });
 
-// 5.9
+// 7.8
 
-const ul = document.querySelector("ul");
+fetch("https://jsonplaceholder.typicode.com/posts")
+  .then((res) => res.json())
+  .then((data) => console.log(data));
 
-const firstElement = ul.firstElementChild.textContent;
-const lastElement = ul.lastElementChild.textContent;
-console.log(firstElement);
-console.log(lastElement);
+// 7.9
+const promise1 = new Promise((resolve, reject) =>
+  setTimeout(resolve, 1000, "Primul rezultat")
+);
+const promise2 = new Promise((resolve, reject) =>
+  setTimeout(resolve, 2000, "Al doilea rezultat")
+);
+const promise3 = new Promise((resolve, reject) =>
+  setTimeout(resolve, 1500, "Al treilea rezultat")
+);
 
-// 5.11
+Promise.all([promise1, promise2, promise3])
+  .then((results) => {
+    console.log(results);
+  })
+  .catch((error) => {
+    console.error("Eroare:", error);
+  });
+
+Promise.allSettled([promise1, promise2, promise3]).then((results) => {
+  console.log(results);
+});
