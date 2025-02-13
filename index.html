@@ -1,10 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Pagina Demonstrativa</title>
-        <script type="module" src="./scripts/main.js"></script>
-    </head>
-    <body></body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab1 React</title>
+    <script type="module" src="./scripts/main.js"></script>
+    <style>
+        .active {
+            background-color: yellow;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="myTitle">Titlu inițial</h1>
+
+    <ul>
+        <li>Element 1</li>
+        <li>Element 2</li>
+        <li>Element 3</li>
+    </ul>
+
+    <div id="container"></div>
+
+    <img id="myImage" src="image1.jpg" alt="Imagine">
+    <div id="box">Acesta este un box.</div>
+
+    <p>Acest paragraf va fi șters.</p>
+
+    <button id="myButton">Schimbă textul</button>
+    <h2 id="myHeading">Text inițial</h2>
+
+    <input type="text" id="myInput" placeholder="Scrie ceva...">
+    <p id="output"></p>
+
+    <button id="toggleButton">Alternare Clasă</button>
+    <div id="toggleElement">Acest element își schimbă stilul.</div>
+
+    <button id="addItemButton">Adaugă Element</button>
+
+</body>
 </html>

@@ -323,3 +323,83 @@ let subArray = numere.slice(1, 3);
 //console.log(subArray);
 numere.splice(2, 1);
 //console.log(numere);
+
+
+
+//==========================================================
+//==========================================================
+//Exercitiul 5.1
+document.getElementById("myTitle").innerText = "Titlu schimbat";
+
+//==========================================================
+//Exercitiul 5.2
+document.querySelectorAll("li").forEach(li => li.style.color = "red");
+
+//==========================================================
+//Exercitiul 5.3
+let p = document.createElement("p");
+p.innerText = "Acesta este un paragraf nou.";
+document.getElementById("container").appendChild(p);
+
+//==========================================================
+//Exercitiul 5.4
+document.getElementById("myImage").src = "../image2.jpg";
+
+//==========================================================
+//Exercitiul 5.5
+document.getElementById("box").classList.add("new-class");
+
+//==========================================================
+//Exercitiul 5.6
+let paragraph = document.querySelector("p");
+if (paragraph) paragraph.remove();
+
+//==========================================================
+//Exercitiul 5.7
+document.getElementById("myButton").addEventListener("click", function() {
+    document.getElementById("myHeading").innerText = "Text schimbat!";
+});
+
+//==========================================================
+//Exercitiul 5.8
+document.getElementById("myInput").addEventListener("input", function() {
+    document.getElementById("output").innerText = this.value;
+});
+
+//==========================================================
+//Exercitiul 5.9
+let ul = document.querySelector("ul");
+if (ul) {
+    let first = ul.firstElementChild?.innerText;
+    let last = ul.lastElementChild?.innerText;
+    console.log("Primul element:", first);
+    console.log("Ultimul element:", last);
+}
+
+//==========================================================
+//Exercitiul 5.10
+document.getElementById("toggleButton").addEventListener("click", function() {
+    document.getElementById("toggleElement").classList.toggle("active");
+});
+
+//==========================================================
+//Exercitiul 5.11
+let table = document.createElement("table");
+for (let i = 0; i < 3; i++) {
+    let row = table.insertRow();
+    for (let j = 0; j < 2; j++) {
+        let cell = row.insertCell();
+        cell.innerText = `Row ${i+1}, Col ${j+1}`;
+    }
+}
+document.body.appendChild(table);
+
+//==========================================================
+//Exercitiul 5.12
+let ulList = document.createElement("ul");
+document.body.appendChild(ulList);
+document.getElementById("addItemButton").addEventListener("click", function() {
+    let li = document.createElement("li");
+    li.innerText = "Element nou";
+    ulList.appendChild(li);
+});
