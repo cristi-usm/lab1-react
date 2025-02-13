@@ -244,6 +244,82 @@ let { marca, an } = car;
 //console.log(marca, an);
 
 //==========================================================
+//Exercitiul 4.1
+let orase = ["Chisinau", "Balti", "Orhei"];
+//console.log(orase[0]);
+//console.log(orase[orase.length - 1]);
 
+//==========================================================
+//Exercitiul 4.2
+orase.unshift("Rezina");
+orase.push("Leova");
+orase.pop();
 
+//==========================================================
+//Exercitiul 4.3
+let culori = ["roșu", "verde", "albastru"];
+for (let culoare of culori) {
+    //console.log(culoare);
+}
 
+//==========================================================
+//Exercitiul 4.4
+let animale = ["câine", "pisică", "cal"];
+//animale.forEach(animal => console.log(`Animal: ${animal}`));
+
+//==========================================================
+//Exercitiul 4.5
+function filtreazaNumere(arr) {
+    return arr.filter(num => num > 10);
+}
+//console.log(filtreazaNumere([5, 12, 18, 7, 25]));
+
+//==========================================================
+//Exercitiul 4.6 
+let numere2 = [42, 7, 19, 3];
+numere2.sort((a, b) => a - b);
+//console.log(numere2);
+
+//==========================================================
+//Exercitiul 4.7
+let patrate = numere2.map(num => num * num);
+//console.log(patrate);
+
+//==========================================================
+//Exercitiul 4.8
+let suma2 = numere2.reduce((acc, num) => acc + num, 0);
+//console.log(suma);
+
+//==========================================================
+//Exercitiul 4.9
+//console.log(numere2.includes(19));
+//console.log(numere2.indexOf(7));
+
+//==========================================================
+//Exercitiul 4.10
+let cuvinte1 = ["bun", "frumos"];
+let cuvinte2 = ["inteligent", "harnic"];
+let combinat = [...cuvinte1, ...cuvinte2];
+//console.log(combinat);
+
+//==========================================================
+//Exercitiul 4.11
+let matrice = [
+    [1, 2],
+    [3, 4]
+];
+//console.log(matrice[0][1]);
+
+//==========================================================
+//Exercitiul 4.12
+function eliminaDuplicate(arr) {
+    return [...new Set(arr)];
+}
+//console.log(eliminaDuplicate([1, 2, 2, 3, 4, 4]));
+
+//==========================================================
+//Exercitiul 4.13
+let subArray = numere.slice(1, 3);
+//console.log(subArray);
+numere.splice(2, 1);
+//console.log(numere);
