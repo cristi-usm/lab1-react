@@ -116,3 +116,34 @@ function altaFunctie(array, functie) {
     return array.map(functie);
 }
 console.log(altaFunctie([1, 2, 3], dublu));
+
+//3.1
+let masina = { marca: "Toyota", model: "Avalon", an: 2013 };
+
+//3.2
+console.log(masina.marca, masina["model"]);
+
+//3.3
+masina.culoare = "rosu";
+masina.an = 2022;
+
+//3.4
+delete masina.model;
+
+//3.5
+
+//3.6
+
+//3.7
+
+//3.8
+
+//3.9
+
+//3.10
+
+//3.11
+
+//3.12
+
+//3.13
