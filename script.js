@@ -300,3 +300,58 @@ document.getElementById("add-item").addEventListener("click", function() {
     li.textContent = "Element nou";
     document.querySelector("ul").appendChild(li);
 });
+
+// 7.1
+setTimeout(() => console.log("Salut după 3 secunde!"), 3000);
+
+// 7.2
+let contor = 1;
+let cronometru = setInterval(() => {
+    console.log(contor);
+    if (contor++ === 5) clearInterval(cronometru);
+}, 1000);
+
+// 7.3
+function salutCallback(callback) {
+    console.log("Salut!");
+    callback();
+}
+salutCallback(() => console.log("Callback apelat!"));
+
+// 7.4
+function promisiune() {
+    return new Promise(resolve => setTimeout(() => resolve("Rezolvat!"), 2000));
+}
+promisiune().then(console.log);
+
+// 7.5
+function testPromise(param) {
+    return new Promise((resolve, reject) => {
+        if (param) resolve("Succes!");
+        else reject("Eroare!");
+    });
+}
+testPromise(true).then(console.log).catch(console.error);
+
+// 7.6
+async function apelPromisiune() {
+    let rezultat = await promisiune();
+    console.log(rezultat);
+}
+apelPromisiune();
+
+// 7.7
+function p1() { return new Promise(res => setTimeout(() => res("P1"), 1000)); }
+function p2() { return new Promise(res => setTimeout(() => res("P2"), 2000)); }
+function p3() { return new Promise(res => setTimeout(() => res("P3"), 3000)); }
+
+p1().then(console.log).then(p2).then(console.log).then(p3).then(console.log);
+
+// 7.8
+fetch("https://jsonplaceholder.typicode.com/posts")
+    .then(response => response.json())
+    .then(data => console.log(data));
+
+// 7.9
+Promise.all([p1(), p2(), p3()]).then(console.log);
+Promise.allSettled([p1(), p2(), p3()]).then(console.log);
