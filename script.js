@@ -242,3 +242,61 @@ console.log(eliminaDuplicate([1, 2, 2, 3, 4, 4, 5]));
 let subArray = numere.slice(1, 3);
 numere.splice(2, 1);
 console.log(subArray, numere);
+
+// 5.1
+document.getElementById("titlu").textContent = "Nou titlu";
+
+// 5.2
+document.querySelectorAll("li").forEach(el => el.style.color = "red");
+
+// 5.3
+let paragraf = document.createElement("p");
+paragraf.textContent = "Text nou";
+document.getElementById("container").appendChild(paragraf);
+
+// 5.4
+document.querySelector("img").src = "new-image.jpg";
+
+// 5.5
+document.getElementById("box").classList.add("noua-clasa");
+
+// 5.6
+let element = document.querySelector("p");
+element.parentNode.removeChild(element);
+
+// 5.7
+document.getElementById("buton").addEventListener("click", function() {
+    document.querySelector("h2").textContent = "Text modificat!";
+});
+
+// 5.8
+document.getElementById("input").addEventListener("input", function() {
+    document.getElementById("output").textContent = this.value;
+});
+
+// 5.9
+let lista = document.querySelector("ul");
+console.log(lista.firstElementChild.textContent, lista.lastElementChild.textContent);
+
+// 5.10
+document.getElementById("toggle-btn").addEventListener("click", function() {
+    document.getElementById("element").classList.toggle("active");
+});
+
+// 5.11
+let table = document.createElement("table");
+for (let i = 0; i < 3; i++) {
+    let row = table.insertRow();
+    for (let j = 0; j < 2; j++) {
+        let cell = row.insertCell();
+        cell.textContent = `Row ${i + 1} Col ${j + 1}`;
+    }
+}
+document.body.appendChild(table);
+
+// 5.12
+document.getElementById("add-item").addEventListener("click", function() {
+    let li = document.createElement("li");
+    li.textContent = "Element nou";
+    document.querySelector("ul").appendChild(li);
+});
