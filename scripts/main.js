@@ -1,3 +1,7 @@
+import { adunare, scadere } from "./mathUtils.js";
+import mesajSalut from "./salutari.js";
+import * as dateUtilizator from "./dateUtilizator.js";
+
 // Exercitiul 1.1
 var a = 10
 let b = "Text"
@@ -497,3 +501,22 @@ Promise.all([p1, p3])
 
 Promise.allSettled([p1, p2, p3])
     .then(results => console.log("Promise.allSettled rezultate:", results));
+
+
+//==========================================================
+//Exercitiul 8.2
+console.log("Suma:", adunare(5, 3));
+console.log("Diferența:", scadere(5, 3));
+
+
+
+//==========================================================
+//Exercitiul 8.4
+mesajSalut("Dima");
+
+
+//==========================================================
+//Exercitiul 8.6
+console.log("Nume:", dateUtilizator.nume);
+console.log("Vârsta:", dateUtilizator.varsta);
+console.log("Oraș:", dateUtilizator.oras);
