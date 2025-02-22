@@ -69,7 +69,7 @@
 ### 7.8 Utilizați fetch pentru a prelua date de la o API publică (de exemplu, **JSONPlaceholder** https://jsonplaceholder.typicode.com/guide/) și afișați rezultatele.
 ### 7.9 Folosiți *Promise.all* și *Promise.allSettled* pentru a aștepta rezolvarea mai multor promisiuni.
 ## 8. Module ES
-### 8.1 În fișierul **mathUtils.js** exportați două funcții simple pentru operații matematice: **adunare** și **scădere**.
+### 8.1 În fișierul **mathUtils.js** exportați două funcții simple pentru operații matematice: **adunare** și **scădere**. 
 ### 8.2 În fișierul **main.js** importați funcțiile și folosiți-le pentru a calcula suma și diferența a două numere.
 ### 8.3 În fișierul **salutari.js** exportați implicit o funcție care afișează un mesaj de salut.
 ### 8.4 În fișierul **main.js** importați funcția cu un nume ales de utilizator și folosiți-o pentru a saluta un utilizator.
