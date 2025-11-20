@@ -1,0 +1,485 @@
+// 1. Variabile și Tipuri de date
+// 1.1 Declarați trei variabile utilizând var, let, și const. Atribuiți-le valori de tip number, string și boolean.
+var a = 1;
+let b = '1';
+const c = true;
+
+// 1.2 Scrieți o funcție care primește o variabilă ca parametru și returnează tipul său de date utilizând typeof.
+function tipVariabila() {
+    return typeof c;
+}
+
+// 1.3 Convertiți o valoare de tip string în number și invers. Exemplu: "123" → 123 și 456 → "456".
+function convertire(val) {
+    if(typeof val === 'string'){
+       return Number(val);
+    }
+    else if(typeof val === 'number') {
+       return String(val);
+    }
+}
+
+// 1.4 Declarați două variabile (nume, varsta) și creați o propoziție utilizând șabloane de string-uri (template literals - ``).
+function propozitie() {
+    let nume = 'Denis';
+    let varsta = 22;
+    return `Numele meu este ${nume} si am ${varsta} de ani`;
+}
+
+
+// 1.5 Folosiți o variabilă temporară pentru a schimba valorile dintre două variabile.
+function temp() {
+    let a = 1;
+    let b = 2;
+
+    let temp = a;
+    a = b;
+    b = temp;
+
+    return `a=${a}, b=${b}`;
+}
+
+// 1.6 Scrieți o funcție care verifică dacă o variabilă este de tip null sau undefined.
+function isVariableNullOrUndefined(a) {
+   return a === null | a === undefined;
+}
+
+// 1.7 Creați un obiect cu mai multe proprietăți (string, number, boolean). Adăugați și eliminați dinamic o proprietate la obiect.
+function objectOperations() {
+    let persoana = {
+        nume: 'Olari'.split().reverse(),
+        varsta: 0
+    };
+
+    persoana.nume.reverse();
+    persoana.varsta = 22;
+
+    return `nume=${persoana.nume},varsta=${persoana.varsta}`;
+}
+// 1.8 Declarați un array care conține minim 5 valori fiecare un tip de date diferit. Iterați prin array și afișați tipul fiecărui element.
+function arrOperations() {
+    let arr = [1,true,'5'];
+    for(let i of arr){
+      console.log(typeof i);
+    }
+}
+// 2. Funcții
+// 2.1 Scrieți o funcție care primește două numere ca parametri și returnează suma lor.
+function sum(a,b) {
+return a + b;
+}
+// 2.2 Creați o funcție care calculează aria unui dreptunghi. Dacă înălțimea nu este specificată, să aibă valoarea implicită de 1.
+function calculeazaAria(lungimea, inaltimea) {
+    if(!inaltimea) 
+        return 1;
+
+    return lungimea * inaltimea;
+}
+// 2.3 Declarați o funcție anonimă și asociați-o unei variabile. Funcția să returneze pătratul unui număr.
+const patrat = function(numar){
+   return numar * numar;
+}
+function afisarePatrat(numar) {
+   return patrat(numar);
+}
+
+// 2.4 Scrieți o funcție care primește un string, îl convertește la litere mari și returnează numărul de caractere.
+function convertToUpperCase(str) {
+   return str.toUpperCase().length;
+}
+// 2.5 Creați o funcție principală care primește un număr și folosește alte două funcții: una pentru a calcula dublul numărului și alta pentru a calcula pătratul. Returnați rezultatele ambelor într-un obiect.
+function main(numar) {
+    return {
+        dublu: dublu(numar),
+        patratulNumarului: patratulNumarului(numar)
+    };
+}
+
+function dublu(numar) {
+   return numar * 2;
+}
+
+function patratulNumarului(numar) {
+   return numar * numar;
+}
+
+// 2.6 Rescrieți funcția de calcul al sumei folosind o expresie săgeată.
+const sumaNumerelor = (a,b) => a + b; 
+function afisareSumaNumerelor(a,b) {
+   return sumaNumerelor(a,b);
+}
+// 2.7 Scrieți o funcție care aplică o altă funcție asupra fiecărui element al unui array.
+function aplicaOperatie(arr) {
+   for(let i = 0; i<arr.length; i++) {
+       ++arr[i];
+   }
+}
+function generateArr() {
+    let arr = [1,2,3];
+    aplicaOperatie(arr);
+    return arr;
+}
+
+// 3. Obiecte
+// 3.1 Declarați un obiect masina cu următoarele proprietăți: marca, model, și an. Atribuiți valori pentru fiecare proprietate.
+function masina() {
+    let masina = {
+        marca: 'BMW',
+        model: 'E39',
+        an: 2000
+    };
+    return masina;
+}
+// 3.2 Afișați valoarea proprietăților marca și model utilizând atât notația cu punct, cât și cea cu paranteze pătrate.
+function afisareMasinaProprietati() {
+    const obj = masina();
+    return `marca=${obj.marca},model=${obj.model}`;
+}
+// 3.3 Adăugați o proprietate nouă, culoare, și actualizați proprietatea an cu o valoare diferită.
+function adaugareProprietareNouaMasina() {
+    const obj = masina();
+    obj.culoare = 'rosie';
+    obj.an = 2025;
+    return obj;
+}
+// 3.4 Ștergeți proprietatea model din obiect.
+function stergereProprietareMasina() {
+    const obj = masina();
+    delete obj.model;
+    return obj;
+}
+// 3.5 Folosiți for...in pentru a itera prin toate proprietățile unui obiect și afișați cheile și valorile acestora.
+function afisareMasina() {
+    const obj = masina();
+    for(let key in obj){
+        console.log(`${key}: ${obj[key]}`);
+    }
+}
+// 3.6 Adăugați o metodă descriere în obiectul masina care să returneze un string cu toate informațiile despre mașină.
+const description = function (car) {
+    return `Masina este o ${car.marca}, model ${car.model}, fabticata in anul ${car.an}.`;
+}
+
+function descriere() {
+    const obj = masina();
+    return description(obj);
+}
+// 3.7 Scrieți o funcție care primește un obiect persoana cu proprietăți nume și varsta și returnează un mesaj personalizat, în care să se conțină valorile ambelor proprietăți.
+function salutPersoana(persoana) {
+    return `Salut, ${persoana.nume}! Ai ${persoana.varsta} ani.`;
+}
+// 3.8 Verificați dacă obiectul masina conține o proprietate culoare utilizând operatorul in.
+function verificaProprietateaMasinei() {
+    const obj = masina(); 
+    if('culoare' in obj) {
+       return true;
+    }
+    return false;
+}
+// 3.9 Declarați un obiect casa care să conțină un alt obiect adresa cu proprietăți precum strada și oras.
+function obiectInAltObiect() {
+    const casa = {
+        nrCamere: 4,
+        adresa: {
+            strada: 'Stefan cel Mare'
+        }
+    };
+    return casa;
+}
+// 3.10 Scrieți o funcție care primește parametri, creează și returnează un obiect student cu proprietățile nume, varsta și nota.
+function createStudent(nume, varsta, nota) {
+    const student = {
+      nume: nume,
+      varsta: varsta,
+      nota: nota
+    };
+    return student;
+  }
+// 3.11 Folosiți Object.assign și operatorul spread (...) pentru a clona obiectul masina în alte obiecte.
+function assignStudent() {
+    const student1 = createStudent('denis',22,9);
+    const student2 = Object.assign({}, student1);
+    const student3 = {...student2};
+    return [student1, student2, student3];
+}
+// 3.12 Creați un obiect calculator cu metode pentru adunare, scădere, înmulțire și împărțire.
+function calculate() {
+    const calculator = {
+        adunare: (a,b) => a + b,
+        scadere: (a,b) => a - b,
+        inmultire: (a,b) => a * b,
+        impartire: (a,b) => a / b
+    };
+    return calculator;
+}
+// 3.13 Folosiți destructurarea pentru a extrage câteva proprietăți dintr-un obiect.
+function destructurareaObiect() {
+    const { marca, an, model } = masina();
+    return (`Marca: ${marca}, An: ${an}, Model: ${model}`);
+}
+// 4. Array-uri
+// 4.1 Declarați un array cu trei nume de orașe și afișați primul și ultimul element.
+function numeOrase() {
+    let arr = ['Chisinau', 'Bucuresti', 'Moscow'];
+    return `primul=${arr[0]},ultimul=${arr[arr.length-1]}`
+}
+// 4.2 Adăugați un oraș la sfârșitul și începutul array-ului. Ștergeți ultimul oraș.
+function oraseOperations() {
+    let arr = ['Chisinau', 'Bucuresti', 'Moscow'];
+    arr.push('Budapest');
+    arr.unshift('Viena');
+    arr.splice((arr.length/2),1);
+    return arr;
+}
+// 4.3 Folosiți un for pentru a itera printr-un array de culori și afișați fiecare element.
+function afisareCulori() {
+    const culori = ['rosu', 'verde', 'galben']; 
+    for(item of culori){
+        console.log(item);
+    }
+}
+// 4.4 Folosiți metoda forEach pentru a parcurge un array cu denumiri de animale și afișați fiecare element cu un mesaj personalizat.
+function afisareAnimale() {
+    const animale = ['papagal', 'caine', 'pisica'];
+    for(item of animale){
+        console.log(`Animal ales: ${item}`);
+    }
+}
+// 4.5 Scrieți o funcție care primește un array de numere și returnează doar numerele mai mari de 10.
+function afisareNumereMaiMariCa10(arr) {
+    for(item of arr) {
+       if(item > 10) console.log(item);
+    }
+}
+// 4.6 Declarați un array de numere și sortați-l în ordine crescătoare.
+function sortareArr() {
+    let arr = [3,2,1];
+    return arr.sort();
+}
+// 4.7 Scrieți un program care primește un array de numere și returnează un nou array cu pătratele fiecărui număr, utilizând funcția map.
+function newArrWithMap() {
+    let arr = [1,2,3];
+    return arr.map(i => i * i);
+}
+// 4.8 Calculați suma elementelor dintr-un array folosind funcția reduce.
+function sumOfArrUsingReduce() {
+    let arr = [1,2,3];
+    return arr.reduce((acc, curr) => acc + curr, 0);
+}
+// 4.9 Verificați dacă un anumit element există într-un array folosind includes și indexOf.
+function includesAndInfexOfUsage() {
+    let arr = [1,2,3,4,5];
+    return {
+        includes: arr.includes(7), 
+        indexOf: arr.indexOf(2)
+    };
+}
+// 4.10 Combinați două array-uri de cuvinte într-unul singur folosind concat sau operatorul spread (...).
+function combineArrays() {
+    let arr1 = [1,2];
+    let arr2 = [3,4];
+
+    return {
+        combinat1: arr1.concat(arr2),
+        combinat2: [...arr1, ...arr2]
+    };
+}
+// 4.11 Declarați un array bidimensional pentru o matrice 2x2 și accesați elementul de pe linia 1, coloana 2.
+function matrice2x2() {
+    let arr = [[1,2], [3,4]];
+    return arr[0][1];
+}
+// 4.12 Scrieți o funcție care elimină elementele duplicate dintr-un array.
+function deleteDuplicates() {
+    let arr = [1,2,3,4,1,2];
+    return [...new Set(arr)];
+}
+// 4.13 Folosiți slice pentru a crea un sub-array și splice pentru a elimina elementul cu indexul 2.
+function sliceOperation() {
+    const arr = [10, 20, 30, 40, 50];
+    return arr.slice(1, 4);
+}
+// 5. Manipulări DOM
+// 5.1 Selectați un element <h1> dintr-un document HTML folosind getElementById și schimbați textul acestuia.
+function elementh1() {
+   const h1 = document.getElementsByTagName('h1');
+   h1[0].innerHTML = "Text nou pentru H1";
+}
+// 5.2 Selectați toate elementele <li> dintr-un document folosind querySelectorAll și schimbați culoarea textului.
+function liOperations() {
+    const liElements = document.querySelectorAll('li');
+    liElements.forEach(li => li.style.color = 'blue');
+}
+// 5.3 Creați un element <p>, adăugați un text în acesta și introduceți-l la sfârșitul unui element <div> cu ID-ul container.
+function pOperation() {
+    const p = document.createElement('p');
+    p.textContent = "Acesta este un paragraf nou.";
+    document.getElementById('container').appendChild(p);
+}
+// 5.4 Selectați o imagine și schimbați valoarea atributului src.
+function imageOperation() {
+    const img = document.getElementById('imagine');
+    img.src = "https://searchengineland.com/wp-content/seloads/2014/10/Google-Halloween-Pumpkin-logo.png";
+}
+// 5.5 Adăugați o clasă nouă unui element cu ID-ul box.
+function addClassToBox() {
+    const box = document.getElementById('box');
+    box.classList.add('box2');
+}
+// 5.6 Eliminați un element <p> dintr-un document.
+function eliminateElementP() {
+    let el = document.getElementsByTagName('p');
+    el[0].remove();
+}
+// 5.7 Adăugați un eveniment click unui buton, astfel încât să schimbe textul unui <h2> când este apăsat.
+function schimbareText() {
+    let el = document.getElementsByTagName('h1');
+    el[0].innerHTML = 'Text schimbat';
+}
+// 5.8 Monitorizați un câmp de text și afișați mai jos conținutul acestuia într-un paragraf în timp real.
+const inputTextElement = document.getElementById('inputText');
+    inputTextElement.addEventListener('input', () => {
+    document.getElementById('paragraf').innerHTML = inputTextElement.value;
+    });
+// 5.9 Selectați un element <ul> și afișați textul primului și ultimului copil.
+function selectLiElements() {
+    const lista = document.getElementById('lista');
+    console.log(lista.firstElementChild.textContent);
+    console.log(lista.lastElementChild.textContent);
+}
+// 5.10 Alternați o clasă active pe un element atunci când este apăsat un buton.
+    const toggleBox = document.getElementById('toggleBox');
+    toggleBox.addEventListener('click', () => {
+        toggleBox.classList.toggle('active');
+      });
+// 5.11 Creați dinamic un tabel HTML cu 3 rânduri și 2 coloane.
+function createDynamicTable() {
+    const tabel = document.createElement('table');
+    for (let i = 0; i < 3; i++) {
+      const tr = document.createElement('tr');
+      for (let j = 0; j < 2; j++) {
+        const td = document.createElement('td');
+        td.textContent = `R${i+1}C${j+1}`;
+        tr.appendChild(td);
+      }
+      tabel.appendChild(tr);
+    }
+    document.getElementById('tabelContainer').appendChild(tabel);
+}
+// 5.12 Creați o listă <ul> și adăugați elemente noi la apăsarea unui buton.
+function adaugareElementeInLista() {
+    const listaDinamica = document.getElementById('listaDinamica');
+    const inputItem = document.getElementById('inputItem');
+    
+    if (inputItem.value.trim() === '') return;
+
+    const li = document.createElement('li');
+    li.textContent = inputItem.value;
+    listaDinamica.appendChild(li);
+    inputItem.value = '';
+  }
+// 7. Programare Asincronă
+// 7.1 Scrieți un program care afișează un mesaj în consolă după 3 secunde.
+function mesajDupa3Secunde() {
+    setTimeout(() => {
+        console.log("Mesaj afisat dupa 3 secunde!");
+      }, 3000);
+}
+// 7.2 Creați un cronometru care afișează numere de la 1 la 5, câte unul pe secundă, și apoi se oprește.
+function interval() {
+    let count = 1;
+const interval = setInterval(() => {
+  console.log(count);
+  if (count === 5) clearInterval(interval);
+  count++;
+}, 1000);
+}
+// 7.3 Scrieți o funcție salut care primește un callback (altă funcție ca parametru) și îl apelează după ce afișează un mesaj.
+function salut(callback) {
+    console.log("Salut!");
+    callback();
+  }
+
+  function afisareCallback() {
+    salut(() => console.log("Callback apelat dupa salut!"));
+  }
+// 7.4 Creați o funcție care returnează un Promise ce se rezolvă după 2 secunde.
+function asteapta2Secunde() {
+    return new Promise(resolve => {
+      setTimeout(() => resolve("Promisiune rezolvata dupa 2 secunde!"), 2000);
+    });
+  }
+//asteapta2Secunde().then(console.log);
+
+// 7.5 Creați o funcție care returnează un Promise ce poate fi respinsă sau rezolvată în funcție de valoarea unui parametru.
+function verificaValoare(val) {
+    return new Promise((resolve, reject) => {
+      if (val > 0) resolve("Valoarea este pozitiva!");
+      else reject("Eroare: valoarea este negativa sau zero!");
+    });
+  }
+  
+  // verificaValoare(5).then(console.log).catch(console.error);
+  // verificaValoare(-2).then(console.log).catch(console.error);
+
+// 7.6 Scrieți o funcție asincronă care apelează fucția de la punctul 7.4 și afișează rezultatul.
+async function apelAsincron() {
+    const rezultat = await asteapta2Secunde();
+    console.log("Rezultat din functia asincrona:", rezultat);
+  }
+
+// 7.7 Creați trei funcții care returnează promisiuni și apelează-le în lanț.
+function f1() {
+    return Promise.resolve("Primul pas complet!");
+  }
+  function f2() {
+    return Promise.resolve("Al doilea pas complet!");
+  }
+  function f3() {
+    return Promise.resolve("Al treilea pas complet!");
+  }
+
+  function apelareFunctiiAsincrone() {
+    f1()
+  .then(msg => {
+    console.log(msg);
+    return f2();
+  })
+  .then(msg => {
+    console.log(msg);
+    return f3();
+  })
+  .then(msg => console.log(msg));
+  }
+// 7.8 Utilizați fetch pentru a prelua date de la o API publică (de exemplu, JSONPlaceholder https://jsonplaceholder.typicode.com/guide/) și afișați rezultatele.
+function fetchOperation() {
+    fetch("https://jsonplaceholder.typicode.com/posts?_limit=3")
+    .then(res => res.json())
+    .then(data => {
+    console.log("Date primite de la API:");
+    console.table(data);
+  })
+  .catch(err => console.error("Eroare la fetch:", err));
+}
+// 7.9 Folosiți Promise.all și Promise.allSettled pentru a aștepta rezolvarea mai multor promisiuni.
+function promiseAllAndPrimiseAllSelectedOperations() {
+    const p1 = Promise.resolve("Prima promisiune OK");
+const p2 = Promise.reject("A doua promisiune EROARE");
+const p3 = new Promise(res => setTimeout(() => res("A treia OK după 1s"), 1000));
+
+Promise.allSettled([p1, p2, p3]).then(results => {
+  console.log("Rezultatele din Promise.allSettled:");
+  console.log(results);
+});
+
+Promise.all([p1, p3])
+  .then(values => console.log("Promise.all OK:", values))
+  .catch(err => console.error("Promise.all a esuat:", err));
+}
+// 8. Module ES
+// 8.1 În fișierul mathUtils.js exportați două funcții simple pentru operații matematice: adunare și scădere.
+// 8.2 În fișierul main.js importați funcțiile și folosiți-le pentru a calcula suma și diferența a două numere.
+// 8.3 În fișierul salutari.js exportați implicit o funcție care afișează un mesaj de salut.
+// 8.4 În fișierul main.js importați funcția cu un nume ales de utilizator și folosiți-o pentru a saluta un utilizator.
+// 8.5 În fișierul dateUtilizator.js exportați mai multe valori.
+// 8.6 În fișierul main.js importați întregul modul și accesați valorile exportate.

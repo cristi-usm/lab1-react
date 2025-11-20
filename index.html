@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The script src attribute</h1>
+<ul id="lista">
+    <li>Element 1</li>
+    <li>Element 2</li>
+    <li>Element 3</li>
+  </ul>
+
+  <div id="container"></div>
+  <div id="box"></div>
+  <p id="paragraf">Elementul p</p>
+  <input type="text" id="inputText">
+  <br> <br>
+  <div id="toggleBox">Click aici</div>
+  <br><br>
+  <div id="tabelContainer"></div>
+  <br><br>
+
+  <ul id="listaDinamica"></ul> 
+  <input type="text" id="inputItem" placeholder="Scrie un element">
+  <button id="btnAdauga" onclick="adaugareElementeInLista()">Adauga</button>
+  <br><br>
+
+  <img id="imagine" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" style="height: 100px; width: 300px">
+
+<br><br>
+<button id="mainButton">Click me</button>
+
+<script type="module">
+  import * as main from './main.js';
+
+  document.getElementById('mainButton').addEventListener('click', () => {
+    main.afisareDateUtilizator();
+  });
+</script>
+
+</body>
+</html>
