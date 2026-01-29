@@ -58,20 +58,20 @@
 ### 5.10 Alternați o clasă **active** pe un element atunci când este apăsat un buton.
 ### 5.11 Creați dinamic un tabel HTML cu **3 rânduri** și **2 coloane**.
 ### 5.12 Creați o listă **`<ul>`** și adăugați elemente noi la apăsarea unui buton.
-## 7. Programare Asincronă
-### 7.1 Scrieți un program care afișează un mesaj în consolă după 3 secunde.
-### 7.2 Creați un cronometru care afișează numere de la **1** la **5**, câte unul pe secundă, și apoi se oprește.
-### 7.3 Scrieți o funcție **salut** care primește un callback (altă funcție ca parametru) și îl apelează după ce afișează un mesaj.
-### 7.4 Creați o funcție care returnează un *Promise* ce se rezolvă după **2** secunde.
-### 7.5 Creați o funcție care returnează un *Promise* ce poate fi respinsă sau rezolvată în funcție de valoarea unui parametru.
-### 7.6 Scrieți o funcție asincronă care apelează fucția de la punctul **7.4** și afișează rezultatul.
-### 7.7 Creați trei funcții care returnează promisiuni și apelează-le în lanț. 
-### 7.8 Utilizați fetch pentru a prelua date de la o API publică (de exemplu, **JSONPlaceholder** https://jsonplaceholder.typicode.com/guide/) și afișați rezultatele.
-### 7.9 Folosiți *Promise.all* și *Promise.allSettled* pentru a aștepta rezolvarea mai multor promisiuni.
-## 8. Module ES
-### 8.1 În fișierul **mathUtils.js** exportați două funcții simple pentru operații matematice: **adunare** și **scădere**.
-### 8.2 În fișierul **main.js** importați funcțiile și folosiți-le pentru a calcula suma și diferența a două numere.
-### 8.3 În fișierul **salutari.js** exportați implicit o funcție care afișează un mesaj de salut.
-### 8.4 În fișierul **main.js** importați funcția cu un nume ales de utilizator și folosiți-o pentru a saluta un utilizator.
-### 8.5 În fișierul  **dateUtilizator.js** exportați mai multe valori.
-### 8.6 În fișierul **main.js** importați întregul modul și accesați valorile exportate.
+## 6. Programare Asincronă
+### 6.1 Scrieți un program care afișează un mesaj în consolă după 3 secunde.
+### 6.2 Creați un cronometru care afișează numere de la **1** la **5**, câte unul pe secundă, și apoi se oprește.
+### 6.3 Scrieți o funcție **salut** care primește un callback (altă funcție ca parametru) și îl apelează după ce afișează un mesaj.
+### 6.4 Creați o funcție care returnează un *Promise* ce se rezolvă după **2** secunde.
+### 6.5 Creați o funcție care returnează un *Promise* ce poate fi respinsă sau rezolvată în funcție de valoarea unui parametru.
+### 6.6 Scrieți o funcție asincronă care apelează fucția de la punctul **7.4** și afișează rezultatul.
+### 6.7 Creați trei funcții care returnează promisiuni și apelează-le în lanț. 
+### 6.8 Utilizați fetch pentru a prelua date de la o API publică (de exemplu, **JSONPlaceholder** https://jsonplaceholder.typicode.com/guide/) și afișați rezultatele.
+### 6.9 Folosiți *Promise.all* și *Promise.allSettled* pentru a aștepta rezolvarea mai multor promisiuni.
+## 7. Module ES
+### 7.1 În fișierul **mathUtils.js** exportați două funcții simple pentru operații matematice: **adunare** și **scădere**.
+### 7.2 În fișierul **main.js** importați funcțiile și folosiți-le pentru a calcula suma și diferența a două numere.
+### 7.3 În fișierul **salutari.js** exportați implicit o funcție care afișează un mesaj de salut.
+### 7.4 În fișierul **main.js** importați funcția cu un nume ales de utilizator și folosiți-o pentru a saluta un utilizator.
+### 7.5 În fișierul  **dateUtilizator.js** exportați mai multe valori.
+### 7.6 În fișierul **main.js** importați întregul modul și accesați valorile exportate.
