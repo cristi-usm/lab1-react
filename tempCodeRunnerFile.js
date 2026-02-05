@@ -1,0 +1,1 @@
+console.log(strInNum("123"));
