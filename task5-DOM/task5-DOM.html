@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laborator JavaScript - DOM</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; background-color: #f4f4f4; }
+        section { background: white; padding: 15px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .highlight { border: 5px solid #ffcc00; background-color: #fff3cd; }
+        .active { background-color: #4CAF50; color: white; padding: 10px; border-radius: 4px; }
+        #box { width: 200px; height: 50px; display: flex; align-items: center; justify-content: center; border: 1px solid #ccc; margin: 10px 0; }
+        table { border-collapse: collapse; margin-top: 10px; width: 100%; }
+        table, th, td { border: 1px solid black; padding: 8px; text-align: center; }
+        img { max-width: 150px; display: block; margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <h1 id="titlu-principal">Titlu Original (5.1)</h1>
+
+    <section>
+        <h2>Subtitlu (5.7)</h2>
+        <ul id="lista-mea">
+            <li>Primul element (5.2 & 5.9)</li>
+            <li>Al doilea element (5.2)</li>
+            <li>Al treilea element (5.2 & 5.9)</li>
+        </ul>
+        <button id="btn-schimba">Schimbă Textul H2 (5.7)</button>
+    </section>
+
+    <section id="container">
+        <div id="box">Elementul Box (5.5)</div>
+        <p>Acest paragraf va fi șters (5.6).</p>
+        <img src="https://via.placeholder.com/150" alt="Placeholder">
+        <button id="btn-imagine">Schimbă Imaginea (5.4)</button>
+    </section>
+
+    <section>
+        <input type="text" id="nume-input" placeholder="Scrie ceva aici (5.8)...">
+        <p>Rezultat în timp real: <strong id="output"></strong></p>
+    </section>
+
+    <section>
+        <div class="meniu">Element pentru Toggle (5.10)</div>
+        <button id="toggle-btn">Apasă pentru Toggle Active</button>
+    </section>
+
+    <section>
+        <button onclick="genereazaTabel()">Creează Tabel 3x2 (5.11)</button>
+        <button id="add-item">Adaugă în Listă (5.12)</button>
+        <ul id="lista-dinamica"></ul>
+    </section>
+
+<script src="task5-DOM.js"></script>
+</body>
+</html>
