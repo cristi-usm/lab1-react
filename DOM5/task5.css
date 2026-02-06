@@ -1,0 +1,34 @@
+
+body.active {
+    background-color: #121212;
+    color: white;
+}
+
+body.active h1,
+body.active h2,
+body.active p,
+body.active li {
+    color: white;
+}
+
+#box {
+    width: 150px;
+    height: 150px;
+}
+
+
+.red-box {
+    background-color: red;
+}
+
+table {
+    width: 300px;
+    margin: 20px 0;
+}
+
+td {
+    width: 150px;
+    height: 50px;
+    border: 1px solid #333;
+}
+
