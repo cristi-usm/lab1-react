@@ -57,3 +57,22 @@ function nullSauUndefined(val) {
 }
 
 console.log(nullSauUndefined(0));
+
+let masina = {
+    marca: "Dacia",
+    an: 2024,
+    esteNoua: true
+};
+
+console.log("Obiect inițial:", masina);
+
+masina.culoare = "Albastru";
+
+let cheieNoua = "combustibil";
+masina[cheieNoua] = "Electric";
+
+console.log("După adăugare:", masina);
+
+delete masina.an;
+
+console.log("După eliminare:", masina);
