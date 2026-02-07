@@ -31,3 +31,8 @@ let s2 = String(x2);
 
 console.log(x1);
 console.log(s2);
+
+let nume = "Victor";
+let varsta = 20;
+
+console.log(`Ma numesc ${nume} si am ${varsta} ani`);
