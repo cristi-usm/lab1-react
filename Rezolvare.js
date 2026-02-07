@@ -253,3 +253,97 @@ const { marca, model } = masina3;
 
 console.log(marca);
 console.log(model);
+
+const arrOrase = ["Chisinau", "Balti", "Ungheni"];
+console.log(arrOrase[0]);
+console.log(arrOrase[arrOrase.length - 1]);
+
+arrOrase.unshift("Orhei");
+arrOrase.push("Sangera");
+console.log(arrOrase);
+
+arrOrase.pop();
+console.log(arrOrase);
+
+const culori = ["rosu", "albastru", "verde"];
+
+for (let i = 0; i < culori.length; i++) {
+    console.log(culori[i]);
+}
+
+const animale = ["pisică", "câine", "lup", "urs"];
+
+animale.forEach((animal, index) => {
+    console.log(`Animalul nr. ${index + 1} din listă este: ${animal}.`);
+});
+
+const filtreazaNumereMari = (lista) => lista.filter(numar => numar > 10);
+
+const numere = [5, 12, 8, 130, 44];
+console.log(filtreazaNumereMari(numere));
+
+numere.sort((a, b) => a - b);
+
+console.log(numere);
+
+const numereLaPatrat = numere.map(n => n * n);
+
+console.log(numereLaPatrat);
+
+const suma2 = numere.reduce((acumulator, valoareCurenta) => {
+    return acumulator + valoareCurenta;
+}, 0);
+
+console.log(suma2);
+
+const fructe = ["măr", "banană", "portocală"];
+
+const areBanana = fructe.includes("banană");
+console.log(areBanana);
+
+if (fructe.includes("struguri")) {
+    console.log("Avem struguri!");
+} else {
+    console.log("Nu am găsit struguri în listă.");
+}
+
+const pozitieVerde = culori.indexOf("verde");
+console.log(pozitieVerde);
+
+if (culori.indexOf("galben") !== -1) {
+    console.log("Culoarea există în array.");
+} else {
+    console.log("Culoarea nu a fost găsită.");
+}
+
+const legume = ["morcov", "cartof"];
+const mancare = [...fructe, ...legume];
+console.log(mancare);
+
+const matrice = [
+    [10, 20],
+    [30, 40]
+];
+
+const element = matrice[0][1];
+console.log(element);
+
+const eliminaDuplicate = (lista) => {
+    return [...new Set(lista)];
+};
+
+const numere2 = [1, 2, 2, 3, 4, 4, 5, 1];
+const numereUnice = eliminaDuplicate(numere2);
+
+console.log(numereUnice);
+
+const culori2 = ["roșu", "verde", "albastru", "galben", "negru"];
+
+const subCulori = culori2.slice(0, 3);
+
+console.log("Sub-array:", subCulori);
+
+const cifre = [10, 20, 30, 40, 50];
+
+const elementSters = cifre.splice(2, 1);
+console.log("Array-ul după eliminare:", cifre);
