@@ -445,19 +445,19 @@ container1.appendChild(tabel);
 
 const buton2 = document.getElementById("adauga-element");
 const lista2 = document.getElementById("lista-dinamica");
-let contor = 1; // Folosim un contor pentru a numerota elementele
+let contor = 1;
 
-// 2. Adăugăm evenimentul de click
 buton2.addEventListener("click", () => {
-    // 3. Creăm un nou element de listă (li)
     const elementNou = document.createElement("li");
 
-    // 4. Setăm textul elementului
     elementNou.textContent = `Elementul numărul ${contor}`;
 
-    // 5. Adăugăm elementul nou în lista existentă (ul)
     lista2.appendChild(elementNou);
 
-    // Incrementăm contorul pentru următorul element
     contor++;
 });
+
+setTimeout(() => {
+    console.log("Au trecut 3 secunde! Acesta este mesajul tău.");
+}, 3000);
+
