@@ -359,3 +359,105 @@ const elementeLista = document.querySelectorAll("li");
 elementeLista.forEach((item) => {
     item.style.color = "blue";
 });
+
+const paragrafNou = document.createElement("p");
+paragrafNou.textContent = "Acesta este un paragraf creat dinamic cu JavaScript.";
+const container = document.getElementById("container");
+if (container) {
+    container.appendChild(paragrafNou);
+}
+
+const imagine = document.getElementById("poza-profil");
+
+if (imagine) {
+    imagine.src = "imagine-noua.jpg";
+}
+
+const elementBox = document.getElementById("box");
+
+if (elementBox) {
+    elementBox.classList.add("highlight");
+}
+
+const paragraf = document.querySelector("p");
+
+if (paragraf) {
+    paragraf.remove();
+}
+
+const buton = document.getElementById("buton-schimbare");
+const titlu = document.getElementById("titlu-mesaj");
+
+buton.addEventListener("click", function () {
+    titlu.textContent = "Textul a fost schimbat cu succes! 🎉";
+
+    titlu.style.color = "forestgreen";
+});
+
+const inputCimp = document.getElementById("intrare-text");
+const paragrafAfisare = document.getElementById("afisare-text");
+
+inputCimp.addEventListener("input", (eveniment) => {
+    const textIntrodus = eveniment.target.value;
+
+    paragrafAfisare.textContent = textIntrodus || "Aici va apărea textul tău...";
+});
+
+const lista = document.querySelector("ul");
+
+if (lista) {
+    const primulCopil = lista.firstElementChild;
+    const ultimulCopil = lista.lastElementChild;
+
+    console.log("Primul element este:", primulCopil ? primulCopil.textContent : "Nu există");
+    console.log("Ultimul element este:", ultimulCopil ? ultimulCopil.textContent : "Nu există");
+}
+
+const buton1 = document.getElementById("buton-toggle");
+
+buton1.addEventListener("click", () => {
+    buton1.style.backgroundColor = "#ff5733";
+    buton1.style.color = "white";
+    buton1.style.border = "none";
+    buton1.style.padding = "10px 20px";
+});
+
+const container1 = document.getElementById("container-tabel");
+
+const tabel = document.createElement("table");
+tabel.setAttribute("border", "1");
+
+for (let i = 1; i <= 3; i++) {
+    const rand = document.createElement("tr");
+
+    for (let j = 1; j <= 2; j++) {
+        const celula = document.createElement("td");
+        celula.textContent = `Rând ${i}, Col ${j}`;
+        celula.style.padding = "10px";
+
+        rand.appendChild(celula);
+    }
+
+    tabel.appendChild(rand);
+}
+
+container1.appendChild(tabel);
+
+const buton2 = document.getElementById("adauga-element");
+const lista2 = document.getElementById("lista-dinamica");
+let contor = 1; // Folosim un contor pentru a numerota elementele
+
+// 2. Adăugăm evenimentul de click
+buton2.addEventListener("click", () => {
+    // 3. Creăm un nou element de listă (li)
+    const elementNou = document.createElement("li");
+
+    // 4. Setăm textul elementului
+    elementNou.textContent = `Elementul numărul ${contor}`;
+
+    // 5. Adăugăm elementul nou în lista existentă (ul)
+    lista2.appendChild(elementNou);
+
+    // Incrementăm contorul pentru următorul element
+    contor++;
+});
