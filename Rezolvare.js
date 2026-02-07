@@ -76,3 +76,9 @@ console.log("După adăugare:", masina);
 delete masina.an;
 
 console.log("După eliminare:", masina);
+
+let array = [1, "1", false, 9007199254740991n, undefined];
+
+for (let i = 0; i < array.length; i++) {
+    console.log(tip(array[i]));
+}
