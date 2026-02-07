@@ -137,3 +137,119 @@ function parcurge(arr, patrat) {
 
 console.log(`Array inainte de modificare: ${arr}`);
 console.log(`Array dupa modificare: ${parcurge(arr, patratArr)}`);
+
+const masina2 = {
+    marca: "Dacia",
+    model: "Logan",
+    an: 2024,
+    descriere() {
+        return `Masina: ${this.marca} ${this.model} ${this.an}`;
+    }
+};
+
+console.log(masina2);
+
+console.log(masina2.descriere());
+
+console.log(masina2.marca);
+console.log(masina2.model);
+
+console.log(masina2["marca"]);
+console.log(masina2["model"]);
+
+masina2.culoare = "Albastru";
+masina2.an = 2021;
+
+console.log(masina2);
+
+delete masina2.model;
+
+console.log(masina2);
+
+for (let cheie in masina2) {
+    console.log(`${cheie}: ${masina2[cheie]}`);
+}
+
+console.log(masina2.descriere());
+
+function salutarePersoana(om) {
+    return "Salut, mă numesc " + om.nume + " și am " + om.varsta + " ani.";
+}
+
+const persoana = {
+    nume: "Victor",
+    varsta: 20
+};
+
+console.log(salutarePersoana(persoana));
+
+if ("culoare" in masina) {
+    console.log(`Proprietatea 'culoare' există în obiectul masina si este: ${masina.culoare}`);
+} else {
+    console.log("Proprietatea 'culoare' NU există.");
+}
+
+const casa = {
+    tip: "Vila",
+    camere: 4,
+    adresa: {
+        strada: "Bulevardul Victoriei 12",
+        oras: "Chișinău",
+        codPostal: "MD-2000"
+    }
+};
+
+console.log(casa);
+
+const creeazaStudent = (nume, varsta, nota) => {
+    return {
+        nume,
+        varsta,
+        nota
+    };
+};
+
+const student = creeazaStudent("Victor", 20, 9);
+
+console.log(student);
+
+const masina3 = {
+    marca: "Dacia",
+    model: "Logan",
+    an: 2021
+};
+
+const masinaSpread = { ...masina3 };
+const masinaSpreadNoua = { ...masina3, culoare: "Roșu" };
+console.log(masinaSpread);
+console.log(masinaSpreadNoua);
+
+const masinaAssign = Object.assign({}, masina3);
+
+console.log(masinaAssign);
+
+const calculator = {
+    adunare: (a, b) => a + b,
+
+    scadere: (a, b) => a - b,
+
+    inmultire: (a, b) => a * b,
+
+    impartire: (a, b) => {
+        if (b === 0) {
+            return "Eroare: Împărțirea la zero nu este permisă!";
+        }
+        return a / b;
+    }
+};
+
+console.log("Adunare (5 + 3):", calculator.adunare(5, 3));
+console.log("Scădere (10 - 4):", calculator.scadere(10, 4));
+console.log("Înmulțire (7 * 6):", calculator.inmultire(7, 6));
+console.log("Împărțire (20 / 5):", calculator.impartire(20, 5));
+console.log("Împărțire (10 / 0):", calculator.impartire(10, 0));
+
+const { marca, model } = masina3;
+
+console.log(marca);
+console.log(model);
