@@ -347,3 +347,15 @@ const cifre = [10, 20, 30, 40, 50];
 
 const elementSters = cifre.splice(2, 1);
 console.log("Array-ul după eliminare:", cifre);
+
+const elementTitlu = document.getElementById("titlu-principal");
+
+if (elementTitlu) {
+    elementTitlu.innerText = "Textul a fost modificat cu succes!";
+}
+
+const elementeLista = document.querySelectorAll("li");
+
+elementeLista.forEach((item) => {
+    item.style.color = "blue";
+});
