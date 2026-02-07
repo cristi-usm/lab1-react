@@ -23,13 +23,11 @@ function tip(x) {
 
 console.log(tip("aleluia"));
 
-function strInNum(s) {
-    let x;
-    while (s.length !== 0) {
-        x = x * 10 + (s[s.length - 1]);
-        s = s.slice(0, s.length);
-    }
-    console.log(x);
-}
+let s1 = "123";
+let x1 = Number(s1);
 
-// console.log(strInNum("123"));
+let x2 = 456;
+let s2 = String(x2);
+
+console.log(x1);
+console.log(s2);
