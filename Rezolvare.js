@@ -461,3 +461,174 @@ setTimeout(() => {
     console.log("Au trecut 3 secunde! Acesta este mesajul tău.");
 }, 3000);
 
+let numar2 = 1;
+
+const cronometru = setInterval(() => {
+    console.log(numar2);
+
+    if (numar2 === 5) {
+        clearInterval(cronometru);
+        console.log("Cronometru oprit.");
+    }
+
+    numar2++;
+}, 1000);
+
+function salut(callback) {
+    console.log("Salut! Mesajul principal a fost afișat.");
+
+    if (typeof callback === "function") {
+        callback();
+    }
+}
+
+function dupaSalut() {
+    console.log("Acesta este callback-ul executat după salut.");
+}
+
+salut(dupaSalut);
+
+function asteaptaDouaSecunde() {
+    return new Promise((resolve, reject) => {
+
+        setTimeout(() => {
+            resolve("Succes! Promisiunea s-a îndeplinit după 2 secunde.");
+        }, 2000);
+    });
+}
+let varsta2 = 18;
+function verificaAccesul(varsta) {
+    return new Promise((resolve, reject) => {
+        console.log("Se verifică datele...");
+
+        setTimeout(() => {
+            if (varsta >= 18) {
+                resolve("Acces permis! Ești major.");
+            } else {
+                reject("Acces respins! Trebuie să ai cel puțin 18 ani.");
+            }
+        }, 1500);
+    });
+}
+
+verificaAccesul(varsta2);
+
+function plaseazaComanda() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            console.log("1. Comanda a fost plasată.");
+            resolve({ id: 101, produs: "Laptop" });
+        }, 1000);
+    });
+}
+
+function proceseazaPlata(comanda) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            console.log(`2. Plata pentru comanda ${comanda.id} a fost confirmată.`);
+            resolve({ ...comanda, statusPlata: "Succes" });
+        }, 1000);
+    });
+}
+
+function expediazaColetul(comandaFinalizata) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            console.log(`3. Produsul ${comandaFinalizata.produs} a fost expediat.`);
+            resolve("Finalizat!");
+        }, 1000);
+    });
+}
+
+plaseazaComanda()
+    .then((comanda) => proceseazaPlata(comanda))
+    .then((confirmare) => expediazaColetul(confirmare))
+    .then((rezultatFinal) => {
+        console.log("Proces încheiat:", rezultatFinal);
+    })
+    .catch((eroare) => {
+        console.error("A apărut o problemă pe parcurs:", eroare);
+    });
+
+async function preiaPostari() {
+    try {
+        const raspuns = await fetch('https://jsonplaceholder.typicode.com/posts');
+
+        if (!raspuns.ok) {
+            throw new Error(`Eroare HTTP! Status: ${raspuns.status}`);
+        }
+
+        const date = await raspuns.json();
+
+        console.log("Date primite:", date.slice(0, 5));
+
+        afiseazaInPagina(date.slice(0, 5));
+
+    } catch (eroare) {
+        console.error("A apărut o problemă la preluarea datelor:", eroare);
+    }
+}
+
+function afiseazaInPagina(postari) {
+    const container = document.getElementById("lista-postari");
+
+    postari.forEach(post => {
+        const articol = document.createElement("div");
+        articol.innerHTML = `
+            <h3>${post.title}</h3>
+            <p>${post.body}</p>
+            <hr>
+        `;
+        container.appendChild(articol);
+    });
+}
+
+preiaPostari();
+
+const p1 = Promise.resolve("Date Utilizator");
+const p2 = new Promise((resolve) => setTimeout(() => resolve("Setări Profil"), 2000));
+const p3 = Promise.resolve("Lista Prieteni");
+
+async function incarcaTot() {
+    try {
+        const rezultate = await Promise.all([p1, p2, p3]);
+        console.log("Toate s-au încărcat:", rezultate);
+    } catch (eroare) {
+        console.error("Una dintre promisiuni a eșuat, deci totul a picat.");
+    }
+}
+
+incarcaTot();
+
+const s3 = Promise.resolve("Fișier 1 descărcat");
+const s4 = Promise.reject("Eroare: Fișierul 2 lipsește");
+const s5 = Promise.resolve("Fișier 3 descărcat");
+
+async function verificaDescarcarile() {
+    const rezultate = await Promise.allSettled([s3, s4, s5]);
+
+    rezultate.forEach((rez, index) => {
+        if (rez.status === "fulfilled") {
+            console.log(`Task ${index + 1}: Succes -> ${rez.value}`);
+        } else {
+            console.log(`Task ${index + 1}: Eșec -> ${rez.reason}`);
+        }
+    });
+}
+
+verificaDescarcarile();
+
+import genereazaSalut from './salutari.js';
+
+async function proceseazaSalutul(nume) {
+    console.log("Se pregătește salutul...");
+
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    const rezultat = genereazaSalut(nume);
+
+    console.log("Salutul a fost trimis cu succes!");
+    return rezultat;
+}
+
+proceseazaSalutul("Mihai");
