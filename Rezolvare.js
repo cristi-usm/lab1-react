@@ -82,3 +82,58 @@ let array = [1, "1", false, 9007199254740991n, undefined];
 for (let i = 0; i < array.length; i++) {
     console.log(tip(array[i]));
 }
+
+function suma(x, y) {
+    return x + y;
+}
+
+console.log(suma(5, 6));
+
+function dreptunghi(x, y = 1) {
+    return x * y;
+}
+
+console.log(dreptunghi(2, undefined));
+
+const patrat = (n) => {
+    return n * n;
+}
+
+console.log(patrat(8));
+
+function lucruString(str) {
+    str = str.toUpperCase();
+    let x = str.length;
+    return `Stringul ${str} are ${x} caractere`;
+}
+
+console.log(lucruString("ma numesc aliosa"));
+
+const calculeazaDublu = (n) => n * 2;
+const calculeazaPatrat = (n) => n * n;
+
+function proceseazaNumar(numar) {
+    return {
+        original: numar,
+        dublu: calculeazaDublu(numar),
+        patrat: calculeazaPatrat(numar)
+    };
+}
+
+console.log(proceseazaNumar(5));
+
+const sumaSageata = (x, y) => x + y;
+console.log(sumaSageata(5, 6));
+
+let arr = [1, 2, 3, 4];
+const patratArr = (x) => x * x;
+
+function parcurge(arr, patrat) {
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = patrat(arr[i]);
+    }
+    return arr;
+}
+
+console.log(`Array inainte de modificare: ${arr}`);
+console.log(`Array dupa modificare: ${parcurge(arr, patratArr)}`);
