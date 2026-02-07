@@ -45,3 +45,15 @@ let temp = a;
 a = b;
 b = temp;
 console.log(`a=${a} si b=${b} dupa de schimbare`);
+
+function nullSauUndefined(val) {
+    if (val === null) {
+        return "Variabila este de tip null";
+    } else if (val === undefined) {
+        return "Variabila este de tip undefined";
+    } else {
+        return "Variabila nu este nici null nici undefined";
+    }
+}
+
+console.log(nullSauUndefined(0));
