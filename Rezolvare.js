@@ -36,3 +36,12 @@ let nume = "Victor";
 let varsta = 20;
 
 console.log(`Ma numesc ${nume} si am ${varsta} ani`);
+
+let a = 234;
+let b = 567;
+console.log(`a=${a} si b=${b} inainte de schimbare`);
+
+let temp = a;
+a = b;
+b = temp;
+console.log(`a=${a} si b=${b} dupa de schimbare`);
