@@ -1,0 +1,37 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+/* imagine mică */
+#img {
+  width: 150px;
+}
+
+/* tabel cu borduri */
+table {
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+th,
+td {
+  padding: 5px 10px;
+}
+
+/* input simplu */
+#textInput {
+  margin-top: 10px;
+}
+
+/* butoane simple */
+button {
+  padding: 5px 10px;
+  margin-top: 5px;
+}
