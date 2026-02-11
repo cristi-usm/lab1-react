@@ -180,6 +180,167 @@ let ex = [1, 2, 3, 4, 5];
 let sub = ex.slice(2, 5);
 ex.splice(2, 1);
 
+<h1 id="titlu">Titlu</h1>
+
+let titlu = document.getElementById("titlu");
+titlu.textContent = "Noul Titlu";
+titlu.style.color = "red";
+
+let elemente = document.querySelectorAll("li");
+elemente.forEach(li => li.style.color = "blue");
+
+let p = document.querySelector("p");
+p.textContent = "Acesta este un paragraf modificat.";
+document.getElementById("container").appendChild(p);
+
+
+<img id="poza" src="img1.jpg"></img>
+document.getElementById("poza").src = "img2.jpg";
+
+document.getElementById("box").classList.add("noua-clasa");
+
+let paragraf = document.querySelector("p");
+paragraf.remove();
+
+//<button id="btn">Click</button> 
+<h2 id="subtitle">Text vechi</h2>
+document.getElementById("btn").addEventListener("click", ()=> {
+    document.getElementById("subtitle").textContent = "Text nou";
+});
+
+let input = document.getElementById("inputText");
+let pAfis = document.getElementById("afisare");
+
+input.addEventListener("input", ()=>{
+    pAfis.textContent = input.value;
+});
+
+let ul = document.querySelector("ul");
+console.log(ul.firstElementChild.textContent);
+console.log(ul.lastElementChild.textContent);
+
+//<button id="toggleBtn">Toggle</button>
+<div id="card"></div>
+
+document.getElementById("toggleBtn").onclick = ()=>{
+    document.getElementById("card").classList.toggle("active");
+}
+
+let table = document.createElement("table");
+
+for(let i=0;i<3;i++){
+    let tr = document.createElement("tr");
+    for(let j=0;j<2;j++){
+        let td = document.createElement("td");
+        td.textContent = `R${i+1}C${j+1}`;
+        tr.appendChild(td);
+    }
+    table.appendChild(tr);
+}
+
+document.body.appendChild(table);
+
+
+//<ul id="lista"></ul>
+<button id="addItem">Adauga</button>
+document.getElementById("addItem").onclick = ()=>{
+    let li = document.createElement("li");
+    li.textContent = "Element nou";
+    document.getElementById("lista").appendChild(li);
+}
+
+setTimeout(()=> console.log("Salut dupa 3 sec"),3000);
+
+let i=1;
+let timer = setInterval(()=>{
+    console.log(i);
+    if(i===5) clearInterval(timer);
+    i++;
+},1000);
+
+
+function salut(callback){
+    console.log("Salut!");
+    callback();
+}
+
+salut(()=>console.log("Callback executat"));
+
+function asteapta(){
+    return new Promise(resolve=>{
+        setTimeout(()=>resolve("Gata!"),2000);
+    });
+}
+
+function verifica(val){
+    return new Promise((resolve,reject)=>{
+        if(val) resolve("Succes");
+        else reject("Eroare");
+    });
+}
+
+
+async function test(){
+    let rezultat = await asteapta();
+    console.log(rezultat);
+}
+test();
+
+
+function p1(){ return Promise.resolve(1); }
+function p2(n){ return Promise.resolve(n+1); }
+function p3(n){ return Promise.resolve(n+1); }
+
+p1().then(p2).then(p3).then(console.log);
+
+
+fetch("https://jsonplaceholder.typicode.com/posts/1")
+.then(res=>res.json())
+.then(data=>console.log(data));
+
+
+let pr1 = Promise.resolve(10);
+let pr2 = Promise.resolve(20);
+let pr3 = Promise.reject("eroare");
+
+Promise.all([pr1,pr2])
+.then(console.log);
+
+Promise.allSettled([pr1,pr2,pr3])
+.then(console.log);
+
+
+
+export function adunare(a,b){ return a+b; }
+export function scadere(a,b){ return a-b; }
+
+
+import {adunare, scadere} from "./mathUtils.js";
+
+console.log(adunare(5,3));
+console.log(scadere(5,3));
+
+
+export default function salut(nume){
+    console.log(`Salut ${nume}!`);
+}
+
+
+import salutUser from "./salutari.js";
+salutUser("Alex");
+
+
+export const nume = "Alex";
+export const varsta = 20;
+export const oras = "Chisinau";
+
+
+import * as user from "./dateUtilizator.js";
+
+console.log(user.nume);
+console.log(user.varsta);
+console.log(user.oras);
+
 
 
 console.log(num); // Output: 123
